@@ -35,6 +35,7 @@ refresh.addEventListener("click", _ => {
   location.reload();
 });
 
-console.log(generarExcusa());
-const elementoExcusa = document.getElementById("excusa");
-elementoExcusa.textContent = generarExcusa();
+window.onload = generarExcusa;
+
+const generador_excusa = document.getElementById("excusa");
+generador_excusa.textContent = generarExcusa();
