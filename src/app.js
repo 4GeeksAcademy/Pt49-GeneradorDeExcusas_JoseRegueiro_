@@ -21,11 +21,16 @@ let cuando = [
   "cuando estaba de vacaciones."
 ];
 
+function ElementoT(array) {
+  let ElementoRamdom = array[Math.floor(Math.random() * array.length)];
+  return ElementoRamdom;
+}
+
 function generarExcusa() {
-  let quienRam = quien[Math.floor(Math.random() * quien.length)];
-  let accionRam = accion[Math.floor(Math.random() * accion.length)];
-  let queRam = que[Math.floor(Math.random() * que.length)];
-  let cuandoRam = cuando[Math.floor(Math.random() * cuando.length)];
+  let quienRam = ElementoT(quien);
+  let accionRam = ElementoT(accion);
+  let queRam = ElementoT(que);
+  let cuandoRam = ElementoT(cuando);
 
   return `${quienRam} ${accionRam} ${queRam} ${cuandoRam}`;
 }
