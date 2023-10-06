@@ -1,46 +1,38 @@
-let quien = ["Mi perro", "Mi primo", "Mi gato", "Un Alien", "Mi cuñado"];
-let accion = [
+let who = ["Mi perro", "Mi primo", "Mi gato", "Un Alien", "Mi cuñado"];
+let action = [
   "se comió",
   "me escondió",
   "destrozó",
   "se robó",
   "manipuló mentalmente"
 ];
-let que = [
+let what = [
   "mi proyecto",
   "mi codigo",
   "mis llaves",
   "mi cargador",
   "mi portatil"
 ];
-let cuando = [
+let when = [
   "justo cuando iba a terminar.",
   "al salir de casa.",
   "al llegar al trabajo.",
   "cuando ya estaba saliendo.",
   "cuando estaba de vacaciones."
 ];
-
-function ElementoT(array) {
-  let ElementoRamdom = array[Math.floor(Math.random() * array.length)];
-  return ElementoRamdom;
+function bringRamdomElement(array) {
+  return array[Math.floor(Math.random() * array.length)];
 }
 
-function generarExcusa() {
-  let quienRam = ElementoT(quien);
-  let accionRam = ElementoT(accion);
-  let queRam = ElementoT(que);
-  let cuandoRam = ElementoT(cuando);
-
-  return `${quienRam} ${accionRam} ${queRam} ${cuandoRam}`;
+function excuseGenerator() {
+  return `${bringRamdomElement(who)} ${bringRamdomElement(
+    action
+  )} ${bringRamdomElement(what)} ${bringRamdomElement(when)}`;
 }
-
-let refresh = document.getElementById("refresh");
-refresh.addEventListener("click", _ => {
+let refreshPage = document.getElementById("refresh");
+refreshPage.addEventListener("click", _ => {
   location.reload();
 });
-
-window.onload = generarExcusa;
-
+window.onload = excuseGenerator;
 const generador_excusa = document.getElementById("excusa");
-generador_excusa.textContent = generarExcusa();
+generador_excusa.textContent = excuseGenerator();
